@@ -24,9 +24,13 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif, DIN Condensed, Roboto Condensed;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif, DIN Condensed, Roboto Condensed;
+  --mono: ui-monospace, Consolas, monospace, IBM Plex Mono;
+
+  --font-display: "Roboto Condensed", "DIN Condensed", sans-serif;
+  --font-ui: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;

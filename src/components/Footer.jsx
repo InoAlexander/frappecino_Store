@@ -17,10 +17,10 @@ const Footer = () => {
                 >
                     <Box>
                         <Typography variant="h6" fontWeight="bold">
-                            Frappe-industries
+                            FRAッPE
                         </Typography>
                         <Typography variant="body2" sx={{ opacity: 0.7 }}>
-                            © {new Date().getFullYear()} All Rights Reserved. Frappe-corp.
+                            © {new Date().getFullYear()} All Rights Reserved. Hachiroku-Media
                         </Typography>
                     </Box>
 

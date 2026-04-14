@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Box, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -21,9 +21,12 @@ const Navbar = ({ isDark, setIsDark }) => {
     };
 
     const menuLinks = [
-        { text: 'Home', path: '/' },
-        { text: 'About', path: '/about' },
-        { text: 'Money Pit', path: '/products' },
+        // { text: '[HOME]', path: '/' },
+        { text: '[DRIVE]', path: '/' },
+        { text: '[WORKSHOP]', path: '/products' }, 
+        { text: '[LOGS]', path: '/' },
+        { text: '[MANIFESTO]', path: '/about' },
+        // { text: '[GARAGE]', path: '/' },
     ];
 
     return (
@@ -42,7 +45,7 @@ const Navbar = ({ isDark, setIsDark }) => {
 
     {/* need some kind of logo or somethintg here */}
                     <Typography
-                        variant="h5"
+                        variant="h4"
                         component={Link}
                         to="/"
                         sx={{
@@ -51,7 +54,7 @@ const Navbar = ({ isDark, setIsDark }) => {
                             color: 'inherit',
                             fontWeight: 900,
                             fontStyle: 'italic',
-                            fontFamily: 'monospace'
+                            fontFamily: 'sora'
                         }}
                     >
                         FRAッPE 
@@ -113,21 +116,23 @@ const Navbar = ({ isDark, setIsDark }) => {
                     onClick={toggleDrawer(false)}
                     onKeyDown={toggleDrawer(false)}
                 >
-                    <Typography variant="h6" sx={{ p: 2, fontWeight: 800, textAlign: 'center', fontFamily: 'monospace' }}>
-                        CHECK_IT_OUT
+                    <Typography variant="h5" 
+                                sx={{ px: 2, py: 1, fontWeight: 800, textAlign: 'left', fontFamily: 'sora' }}>
+                        // CORE
                     </Typography>
                     <Typography
                         variant="caption"
                         sx={{
-                            display: 'block',
                             textAlign: 'center',
                             color: 'var(--accent-orange)',
-                            mt: -1.5,
-                            pb: 2,
-                            fontFamily: 'monospace'
+                            p: 1,
+                            fontFamily: 'monospace',
+                            borderTop: '3px solid black',
+                            margin: 'auto'
+                            
                         }}
                     >
-                        // stuff you dont need
+                        understood without being said
                     </Typography>
 {/* links for the shit--------------------- */}
                     <List>
@@ -143,9 +148,10 @@ const Navbar = ({ isDark, setIsDark }) => {
                                         transition: 'all 0.2s ease-in-out',
                                         '&:hover': {
                                             bgcolor: 'var(--accent-red)',
-                                            color: '#fff',
+                                            color: '#FFF',
                                             transform: 'translateX(-8px)',
-                                            boxShadow: `-4px 0px 0px var(--accent-orange), -8px 0px 0px var(--accent-yellow)`,
+                                            boxShadow: `1px 1px 0px var(--accent-orange), 3px 3px 0px var(--accent-yellow)` ,
+                                            opacity: '86%',
                                             '& .MuiTypography-root': { fontWeight: 'bold' }
                                         }
                                     }}

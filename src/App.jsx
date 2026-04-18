@@ -7,6 +7,7 @@ import ProductDetail from './pages/productDetails';
 import About from './pages/About';
 import Footer from './components/Footer'; 
 import ProductListings from './pages/productListings';
+import DriveMedia from './pages/driveMedia'
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -57,6 +58,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/products" element={<ProductListings />} />
               <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/media" element={<DriveMedia/>} />
             </Routes>
           </Box>
           <Footer />

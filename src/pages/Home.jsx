@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Typography, Grid, Button, ButtonBase, useTheme } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Stack, Box, Typography, Grid, Button, ButtonBase, useTheme } from '@mui/material';
+import { useNavigate, Link } from 'react-router-dom';
 import { products } from '../data/products';
 
 const Home = () => {
@@ -61,25 +61,39 @@ const Home = () => {
             </Box>
 
     {/* middle bars---  */}
-            <Grid container justifyContent="space-around" sx={{ borderTop: 1, borderBottom: 1, borderColor: 'divider' }}>
-                {['PROVISIONS', 'ARCHIVES', 'NETWORK'].map((label, i) => (
-                    <Grid item xs={12} md={4} key={label} sx={{
-                        borderRight: { md: i < 2 ? 1 : 0 },
-                        borderBottom: { xs: 1, md: 0 },
-                        borderColor: 'divider'
-                    }}>
-                        <ButtonBase sx={{
-                            width: '100%', py: { xs: 5, md: 8 }, px: 4,
-                            justifyContent: { xs: 'flex-start', md: 'center' },
-                            '&:hover': { bgcolor: 'action.hover', color: '#CC0000' }
+            <Stack direction={{xs: 'column', md:'row'}} 
+                    sx={{ width: '100%', 
+                            borderTop: 1, 
+                            borderBottom: 1, 
+                            borderColor: 'divider', 
+                        }}
+                    >
+                {[
+                    {label: 's h o p', path: '/products'},
+                    {label: 'f o r u m', path:'/forum'},
+                    {label: 'd r i v e', path:'/media'}
+                ].map((item, i) => (
+                        <ButtonBase 
+                            key={item.label} 
+                            component={Link}
+                            to={item.path}
+                            sx={{
+                                    flex:1, 
+                                    py: { xs: 5, md: 8 }, 
+                                    px: 4,
+                                    justifyContent: { xs: 'flex-start', md: 'center' },
+                                    borderBottom: { xs: i < 2 ? 1 : 0, md: 0 },
+                                    borderRight: { xs: 0, md: i < 2 ? 1 : 0 },
+                                    borderColor: 'divider',
+                                    '&:hover': { bgcolor: 'action.hover', color: '#CC0000' }
                         }}>
                             <Typography variant="h5" sx={{ fontWeight: 900, fontFamily: 'Sora', letterSpacing: { xs: 2, md: 0 } }}>
-                                {label}
+                                {item.label}
                             </Typography>
                         </ButtonBase>
-                    </Grid>
+                    
                 ))}
-            </Grid>
+            </Stack>
 
     {/*product cards----------- */}
             <Box sx={{ px: { xs: 4, md: '12%' }, py: 12 }}>
@@ -87,9 +101,9 @@ const Home = () => {
                     <Typography variant="h6" sx={{ fontWeight: 900, fontFamily: 'monospace' }}>[ LATEST_RELEASES ]</Typography>
                     <Box sx={{ width: '100%', height: '1px', bgcolor: 'divider', overflow: 'hidden', mt: 1 }}>
                         <Box sx={{
-                            position: 'absolute', width: '150px', height: '100%',
+                            position: 'absolute', width: '31%', height: '4%',
                             background: 'linear-gradient(90deg, transparent, #CC0000, transparent)',
-                            animation: 'cometMove 4s infinite linear'
+                            animation: 'cometMove 10s infinite linear'
                         }} />
                     </Box>
                 </Box>

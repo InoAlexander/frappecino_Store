@@ -8,6 +8,8 @@ import About from './pages/About';
 import Footer from './components/Footer'; 
 import ProductListings from './pages/productListings';
 import DriveMedia from './pages/driveMedia'
+import ForumHome from './pages/forum/forumHome'
+import {supabase} from './lib/supabase';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -28,16 +30,31 @@ function App() {
     }
   }, [isDark]);
 
-  const theme = useMemo(() => createTheme({
+//db smoke sesh
+  const testDB = async () => {
+  const { data, error } = await supabase.from('profiles').select('*').limit(1);
+  if (error) {
+    console.error("❌ Connection Error:", error.message);
+  } else {
+    console.log("✅ Connection Successful! Data:", data);
+  }
+};
+testDB();
+
+const theme = useMemo(() => createTheme({
     palette: {
       mode: isDark ? 'dark' : 'light',
-      primary: { main: '#FF0000' }, // TRD Red
+      primary: { main: '#FF0000' },    // TRD Red remains Primary
+      secondary: { main: '#ff00ff' },  // Neon Pink moved here (fixes the crash)
+
       background: {
         default: isDark ? '#050505' : '#f5f5f5',
         paper: isDark ? '#0a0a0a' : '#ffffff',
       },
       text: {
-        primary: isDark ? '#ffffff' : '#000000',
+        // These must be simple strings, not objects!
+        primary: isDark ? '#ffffff' : '#1a1a1a',
+        secondary: isDark ? '#00f2ff': '#00666b', 
       }
     },
     typography: { fontFamily: 'monospace' },
@@ -59,6 +76,7 @@ function App() {
               <Route path="/products" element={<ProductListings />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/media" element={<DriveMedia/>} />
+              <Route path="/forum" element={<ForumHome />} />
             </Routes>
           </Box>
           <Footer />

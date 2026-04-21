@@ -25,7 +25,7 @@ const Navbar = ({ isDark, setIsDark }) => {
         // { text: '[HOME]', path: '/' },
         { text: '[DRIVE]', path: '/' },
         { text: '[WORKSHOP]', path: '/products' },
-        { text: '[LOGS]', path: '/' },
+        { text: '[LOGS]', path: '/forum' },
         { text: '[MANIFESTO]', path: '/about' },
         // { text: '[GARAGE]', path: '/' },
     ];
@@ -36,6 +36,7 @@ const Navbar = ({ isDark, setIsDark }) => {
         80% { opacity: 1; }
         100% { left: 100%; opacity: 0; }
 `;
+
 
     const yota = ['#CC0000', '#EB4625', '#F08D2D'];
 

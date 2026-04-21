@@ -194,11 +194,11 @@ const ForumHome = () => {
             <Box sx={{ width: 320, borderRight: `1px solid ${theme.palette.divider}`, p: 4, display: 'flex', flexDirection: 'column', bgcolor: 'rgba(0,0,0,0.1)' }}>
                 <Box sx={{ mb: 6 }}>
                     <Typography variant="h3" sx={{ color: theme.palette.primary.main, fontWeight: 900, letterSpacing: -2, textShadow: `0 0 10px ${theme.palette.primary.main}88` }}>FRAッPE</Typography>
-                    <Typography variant="caption" sx={{ color: theme.palette.secondary.main, letterSpacing: 4, fontWeight: 900, opacity: 0.8 }}>SYNDICATE_v5.4</Typography>
+                    <Typography variant="caption" sx={{ color: theme.palette.secondary.main, letterSpacing: 4, fontWeight: 900, opacity: 0.8 }}>FORUM V1.0.4</Typography>
                 </Box>
                 
                 <Button className="click-pulse neon-border" fullWidth startIcon={<PostAdd />} onClick={() => navigate('/create')} sx={{ mb: 2, bgcolor: theme.palette.primary.main, color: '#000', borderRadius: 0, fontWeight: 900 }}>INITIALIZE_ENTRY</Button>
-                <Button className="click-pulse" fullWidth variant="outlined" startIcon={<Storage />} onClick={() => setIsModalOpen(true)} sx={{ mb: 6, borderRadius: 0, borderColor: theme.palette.divider }}>SPEC_MATRIX</Button>
+                <Button className="click-pulse" fullWidth variant="outlined" startIcon={<Storage />} onClick={() => setIsModalOpen(true)} sx={{ mb: 6, borderRadius: 0, borderColor: theme.palette.divider }}>VEHICLE_FIND</Button>
 
                 <List sx={{ flexGrow: 1 }}>
                     <NavItem icon={<HistoryEdu />} label="ARCHIVE" theme={theme} />
@@ -212,7 +212,7 @@ const ForumHome = () => {
             <Box sx={{ flexGrow: 1, p: 6, display: 'flex', flexDirection: 'column', gap: 4 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Box sx={{ flexGrow: 1 }}>
-                        <Typography variant="overline" sx={{ color: theme.palette.primary.main, mb: 1, display: 'block', textShadow: `0 0 5px ${theme.palette.primary.main}66` }}>UPLINK_DATA_STREAM</Typography>
+                        <Typography variant="overline" sx={{ color: theme.palette.primary.main, mb: 1, display: 'block', textShadow: `0 0 5px ${theme.palette.primary.main}66` }}>FORUM_DATA_STREAM</Typography>
                         <TextField 
                             fullWidth 
                             variant="standard" 
